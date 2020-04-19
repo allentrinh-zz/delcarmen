@@ -1,0 +1,14 @@
+// Colors
+$primaryColor: #27496d;
+$complementaryColor: complement($primaryColor);
+$color: #4a4a4a; // font color
+
+// Fonts
+$heading: 'Raleway', sans-serif;
+$font: 'Montserrat', sans-serif;
+
+// Breakpoints
+$tablet: 769px;
+$desktop: 1024px;
+$widescreen: 1216px;
+$fullhd: 1408px;
