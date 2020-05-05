@@ -35,7 +35,7 @@ export const state = () => ({
       to: '/contact'
     }
   ],
-  wordpress: 'allentrinh.wordpress.com',
+  wordpress: 'delcarmenfit.wordpress.com',
   posts: []
 })
 
@@ -51,6 +51,12 @@ export const getters = {
 export const mutations = {
   fetchPosts(state, posts) {
     state.posts = posts.posts
+  },
+  updateNavigation(state, posts) {
+    console.log(posts)
+    if (!posts.length) {
+      state.navigation.splice(2, 1)
+    }
   }
 }
 
@@ -64,5 +70,6 @@ export const actions = {
     })
 
     commit('fetchPosts', posts)
+    commit('updateNavigation', posts)
   }
 }

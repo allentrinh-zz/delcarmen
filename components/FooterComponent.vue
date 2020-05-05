@@ -50,7 +50,7 @@
             <h2 class="footer__heading">Follow me!</h2>
             <SocialList />
           </div>
-          <div class="column has-text-right-desktop">
+          <div v-if="posts.length" class="column has-text-right-desktop">
             <h2 class="footer__heading">From the blog</h2>
             <ul class="footer__list">
               <li

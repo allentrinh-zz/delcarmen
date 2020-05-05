@@ -14,10 +14,17 @@
               <div class="about">
                 <p class="about__body">{{ description }}</p>
               </div>
-              <router-link to="/blog" class="button">
+              <router-link
+                v-if="$store.state.posts.length"
+                to="/blog"
+                class="button"
+              >
                 <span class="button__span">
                   Read the blog
                 </span>
+              </router-link>
+              <router-link to="/contact" class="button">
+                <span class="button__span">Get in touch</span>
               </router-link>
             </div>
           </div>
@@ -42,8 +49,7 @@ export default {
   },
   head() {
     return {
-      title:
-        'About | Andrew Delcarmen | Your premier personal trainer in Virginia Beach, VA',
+      title: 'About',
       meta: [
         {
           hid: 'description',

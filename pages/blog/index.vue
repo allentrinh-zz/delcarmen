@@ -7,7 +7,7 @@
       alt="Andrew Delcarmen coaching a deadlift"
     />
     <section class="section content blog">
-      <div class="container">
+      <div v-if="pages.length" class="container">
         <h2 class="blog__heading has-text-centered">Recent Posts</h2>
         <div class="pages">
           <div
@@ -102,6 +102,21 @@
           </ul>
         </div>
       </div>
+      <div v-else class="container">
+        <div class="columns">
+          <div class="column is-8-desktop is-offset-2-desktop">
+            <div class="no-posts">
+              <h2 class="no-posts__heading">Sorry!</h2>
+              <p class="no-posts__body">
+                There isn't anything to show here just yet!
+              </p>
+              <router-link to="/" class="button no-posts__link">
+                <span class="button__span">Go home</span>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -164,7 +179,7 @@ export default {
           hid: 'description',
           name: 'description',
           content:
-            'The thoughts and ideas of your premier personal trainer in Virginia Beach, VA'
+            'The thoughts and ideas of Andrew Delcarmen, personal trainer in Virginia Beach, VA'
         }
       ]
     }
