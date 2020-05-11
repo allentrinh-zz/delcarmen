@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div id="programs">
     <Hero
       title="Programs"
       subtitle=""
@@ -35,8 +35,8 @@
           </div>
         </div>
       </section>
-      <section class="section content programs">
-        <div class="container">
+      <section class="section programs">
+        <div class="container content">
           <div class="columns">
             <div class="column is-8-desktop is-offset-2-desktop">
               <h2 class="programs__heading">Who it's for, what you get</h2>
@@ -65,6 +65,28 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="hero is-fullheight hero--has-image">
+        <img
+          :src="require(`~/assets/images/IMG_2366.jpeg`)"
+          alt="Delcarmen spotting a female client's squat"
+          class="hero__image"
+        />
+        <div class="hero-body has-text-centered content">
+          <div class="container">
+            <h2 class="title hero__title">
+              Not sure what's right for you?
+            </h2>
+            <p class="subtitle hero__subtitle">
+              I can help with that!
+            </p>
+            <router-link to="/contact" class="button">
+              <span class="button__span">
+                Contact me for free
+              </span>
+            </router-link>
           </div>
         </div>
         <Triangles modifier="off-white" />
@@ -158,6 +180,9 @@ export default {
 @import '~/assets/styles.scss';
 
 .specialties {
+  @media (min-width: $desktop) {
+    padding: 8rem 1.5rem;
+  }
   &__list {
     display: flex;
     justify-content: flex-start;
@@ -191,10 +216,8 @@ export default {
 .programs {
   background: $primaryColor;
   color: #fff;
-  position: relative;
-  padding: 8rem 1.5rem;
-  @media (min-width: $widescreen) {
-    padding-bottom: 15rem;
+  @media (min-width: $desktop) {
+    padding: 8rem 1.5rem;
   }
   &__heading {
     color: #fff;
@@ -213,6 +236,53 @@ export default {
   }
   &__list-item {
     color: #fff;
+  }
+}
+
+.hero {
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.35);
+  }
+  &--has-image {
+    position: relative;
+    overflow: hidden;
+  }
+  &__image {
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  &__title {
+    font-size: 2rem;
+    color: #fff;
+    font-family: $heading;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @media (min-width: $desktop) {
+      font-size: 3rem;
+    }
+  }
+  &__subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    font-family: $heading;
+    font-style: italic;
+    font-weight: 400;
+    @media (min-width: $desktop) {
+      font-size: 2.5rem;
+    }
   }
 }
 </style>

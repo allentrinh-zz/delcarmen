@@ -10,7 +10,7 @@
         </div>
         <div class="column has-text-right">
           <router-link
-            to="#"
+            to="/contact"
             class="button consultation is-hidden-touch is-hidden-desktop-only"
             @click.native="forceCloseNavigation"
           >

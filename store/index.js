@@ -53,7 +53,6 @@ export const mutations = {
     state.posts = posts.posts
   },
   updateNavigation(state, posts) {
-    console.log(posts)
     if (!posts.length) {
       state.navigation.splice(2, 1)
     }

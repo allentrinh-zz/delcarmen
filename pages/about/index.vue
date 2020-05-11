@@ -7,13 +7,11 @@
       alt=""
     />
     <main id="main">
-      <section class="section content">
+      <section class="section about content">
         <div class="container">
           <div class="columns">
             <div class="column is-8-tablet is-offset-2-tablet">
-              <div class="about">
-                <p class="about__body">{{ description }}</p>
-              </div>
+              <p class="about__body">{{ description }}</p>
               <router-link
                 v-if="$store.state.posts.length"
                 to="/blog"
@@ -29,6 +27,7 @@
             </div>
           </div>
         </div>
+        <Triangles modifier="off-white" />
       </section>
     </main>
   </div>
@@ -36,10 +35,12 @@
 
 <script>
 import Hero from '~/components/Hero.vue'
+import Triangles from '~/components/Triangles.vue'
 
 export default {
   components: {
-    Hero
+    Hero,
+    Triangles
   },
   data() {
     return {
@@ -66,10 +67,15 @@ export default {
 @import '~/assets/styles.scss';
 
 .about {
-  margin-bottom: 2rem;
+  position: relative;
+  @media (min-width: $desktop) {
+    padding-top: 8rem;
+    padding-bottom: 15rem;
+  }
   &__body {
     font-size: 1.115rem;
     line-height: 1.85;
+    margin-bottom: 2rem !important;
   }
 }
 </style>

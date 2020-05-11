@@ -38,7 +38,7 @@
               </div>
             </div>
           </div>
-          <router-link to="contact" class="button">
+          <router-link to="/contact" class="button">
             <span class="button__span">Claim your free consultation!</span>
           </router-link>
         </div>
@@ -121,7 +121,7 @@
               </div>
             </div>
           </div>
-          <router-link to="blog" class="button">
+          <router-link to="/blog" class="button">
             <span class="button__span">
               Read more posts!
             </span>
