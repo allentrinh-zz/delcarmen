@@ -23,11 +23,13 @@
                   <input type="hidden" name="bot-field" />
                   <input type="hidden" name="form-name" value="contact-form" />
                   <div class="field">
-                    <label for="name" class="label">Name</label>
+                    <label for="name" class="label">
+                      Name <span class="contact-form__asterisk">*</span>
+                    </label>
                     <div class="control">
                       <input
-                        type="text"
                         id="name"
+                        type="text"
                         class="input"
                         name="name"
                         required
@@ -35,11 +37,13 @@
                     </div>
                   </div>
                   <div class="field">
-                    <label for="email" class="label">Email</label>
+                    <label for="email" class="label">
+                      Email <span class="contact-form__asterisk">*</span>
+                    </label>
                     <div class="control">
                       <input
-                        type="text"
                         id="email"
+                        type="text"
                         class="input"
                         name="email"
                         required
@@ -50,14 +54,17 @@
                     <label for="comments" class="label">Comments</label>
                     <div class="control">
                       <textarea
-                        name="comments"
                         id="comments"
+                        name="comments"
                         class="textarea has-fixed-size"
                         rows="5"
                       >
                       </textarea>
                     </div>
-                    <p class="help">All fields are required</p>
+                    <p class="help">
+                      <span class="contact-form__asterisk">*</span>
+                      denotes a required field
+                    </p>
                   </div>
                   <div class="field is-grouped">
                     <div class="control">
@@ -102,4 +109,10 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/styles.scss';
+
+.contact-form {
+  &__asterisk {
+    color: #f00;
+  }
+}
 </style>

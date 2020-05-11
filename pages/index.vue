@@ -142,9 +142,35 @@
               </div>
               <h3 class="blocks__heading">{{ block.heading }}</h3>
               <p class="blocks__body">{{ block.body }}</p>
-              <router-link :to="block.link.to" class="button button--ghost">
-                {{ block.link.text }}
-              </router-link>
+            </div>
+          </div>
+          <router-link to="/contact" class="button button--ghost">
+            <span class="button__span">
+              Let's get started
+            </span>
+          </router-link>
+        </div>
+      </section>
+      <section class="hero is-fullheight hero--has-image testimonials">
+        <img
+          :src="require(`~/assets/images/IMG_2373.jpeg`)"
+          alt="Delcarmen coaching male client with log press"
+          class="hero__image"
+        />
+        <div class="hero-body has-text-centered content">
+          <div class="container">
+            <h2 class="title hero__title">Testimonials</h2>
+            <div class="columns">
+              <div
+                v-for="(testimonial, key) in testimonials"
+                :key="key"
+                class="column"
+              >
+                <div class="testimonial">
+                  <p class="testimonial__name">{{ testimonial.name }}</p>
+                  <p class="testimonial__body">{{ testimonial.body }}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -187,31 +213,36 @@ export default {
           icon: 'mdi-weight-lifter',
           heading: 'One-on-one training',
           body:
-            'Best for individuals who are new to fitness! Let me be there by your side to guide you through your workouts',
-          link: {
-            text: 'Sign up for one-on-one training!',
-            to: ''
-          }
+            'Best for individuals who are new to fitness! Let me be there by your side to guide you through your workouts'
         },
         {
           icon: 'mdi-laptop',
           heading: 'Online coaching',
           body:
-            "Already know what you're doing? That's great! I can help those who have their own footing with custom programming and accountability!",
-          link: {
-            text: "Let's work together online!",
-            to: ''
-          }
+            "Already know what you're doing? That's great! I can help those who have their own footing with custom programming and accountability!"
         },
         {
           icon: 'mdi-food-apple',
           heading: 'Nutritional programming',
           body:
-            'Let me take the guess work out of food! Get custom nutritional programming to help you lose fat and keep it off!',
-          link: {
-            text: 'Get a custom nutritional program!',
-            to: ''
-          }
+            'Let me take the guess work out of food! Get custom nutritional programming to help you lose fat and keep it off!'
+        }
+      ],
+      testimonials: [
+        {
+          name: 'Allen Trinh',
+          body:
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odit reiciendis hic deserunt vero eveniet necessitatibus laudantium nisi, vitae consectetur, fugiat molestias dolor mollitia obcaecati pariatur nobis! Rerum, a, veritatis.'
+        },
+        {
+          name: 'Leo Luong',
+          body:
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odit reiciendis hic deserunt vero eveniet necessitatibus laudantium nisi, vitae consectetur, fugiat molestias dolor mollitia obcaecati pariatur nobis! Rerum, a, veritatis.'
+        },
+        {
+          name: 'Andrew Delcarmen',
+          body:
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odit reiciendis hic deserunt vero eveniet necessitatibus laudantium nisi, vitae consectetur, fugiat molestias dolor mollitia obcaecati pariatur nobis! Rerum, a, veritatis.'
         }
       ]
     }
@@ -457,9 +488,7 @@ export default {
   position: relative;
   padding: 8rem 1.5rem;
   background: $primaryColor;
-  @media (min-width: $widescreen) {
-    padding-bottom: 15rem;
-  }
+  margin: 0;
   &__columns {
     display: block;
     @media (min-width: $widescreen) {
@@ -502,9 +531,6 @@ export default {
     font-size: 2rem;
     z-index: 1;
   }
-  &__block {
-    margin-bottom: 3rem;
-  }
   &__heading {
     color: #fff;
     &--main {
@@ -516,6 +542,67 @@ export default {
   &__body {
     color: #fff;
     margin-bottom: 2rem !important;
+  }
+}
+
+.hero {
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.35);
+  }
+  &--has-image {
+    position: relative;
+    overflow: hidden;
+  }
+  &__image {
+    position: absolute;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  &__title {
+    font-size: 2rem;
+    color: #fff;
+    font-family: $heading;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @media (min-width: $desktop) {
+      font-size: 3rem;
+    }
+  }
+  &__subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    font-family: $heading;
+    font-style: italic;
+    font-weight: 400;
+    @media (min-width: $desktop) {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.testimonial {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem 1.5rem;
+  border-radius: 2px;
+  @include box-shadow;
+  &__name {
+    font-weight: bold;
+    font-family: $heading;
+    font-size: 1.25rem;
+  }
+  &__body {
   }
 }
 </style>

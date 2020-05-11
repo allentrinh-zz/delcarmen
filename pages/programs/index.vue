@@ -14,10 +14,9 @@
               <div class="specialties">
                 <h2 class="specialties__heading">Specialties</h2>
                 <p class="specialties__body">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad
-                  iure mollitia? Nisi, expedita blanditiis quod atque, corporis,
-                  voluptas amet eligendi ullam, sed neque reprehenderit
-                  architecto repellendus et dolore deleniti.
+                  Not everyone is "one size fits all", and neither should your
+                  trainer be. That is why I have dedicated myself to these many
+                  different expertises.
                 </p>
                 <ul class="specialties__list">
                   <li
