@@ -23,6 +23,7 @@
     <Triangles />
     <button class="scroll" @click="autoScroll">
       <span class="mdi mdi-arrow-down-bold-hexagon-outline scroll__icon"></span>
+      <span class="is-sr-only">Scroll to main content</span>
     </button>
   </section>
 </template>

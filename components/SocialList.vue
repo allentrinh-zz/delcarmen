@@ -11,6 +11,7 @@
       >
         <a :href="social.to" class="social__link" target="_blank">
           <span class="social__icon mdi" :class="social.icon"></span>
+          <span class="is-sr-only">{{ social.platform }}</span>
         </a>
       </li>
     </ul>

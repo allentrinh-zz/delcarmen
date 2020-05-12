@@ -134,7 +134,7 @@ export default {
 
 .footer {
   background: #000;
-  padding: 3rem 1.5rem 0;
+  padding: 3rem 0 0;
   &__legal {
     padding: 3rem 0 0;
   }
