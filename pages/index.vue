@@ -128,7 +128,10 @@
           </router-link>
         </div>
       </section>
-      <section class="section content blocks has-text-centered">
+      <section
+        class="section content blocks has-text-centered"
+        :class="{ 'blocks--triangles': !testimonials.length }"
+      >
         <div class="container">
           <h2 class="blocks__heading--main">Available services</h2>
           <div class="columns blocks__columns">
@@ -150,8 +153,12 @@
             </span>
           </router-link>
         </div>
+        <Triangles v-if="!testimonials.length" modifier="off-white" />
       </section>
-      <section class="hero is-fullheight hero--has-image testimonials">
+      <section
+        v-if="testimonials.length"
+        class="hero is-fullheight hero--has-image testimonials"
+      >
         <img
           :src="require(`~/assets/images/IMG_2373.jpeg`)"
           alt="Delcarmen coaching male client with log press"
@@ -212,7 +219,7 @@ export default {
       blocks: [
         {
           icon: 'mdi-weight-lifter',
-          heading: 'One-on-one training',
+          heading: 'In person training',
           body:
             'Best for individuals who are new to fitness! Let me be there by your side to guide you through your workouts'
         },
@@ -229,23 +236,7 @@ export default {
             'Let me take the guess work out of food! Get custom nutritional programming to help you lose fat and keep it off!'
         }
       ],
-      testimonials: [
-        {
-          name: 'Allen Trinh',
-          body:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odit reiciendis hic deserunt vero eveniet necessitatibus laudantium nisi, vitae consectetur, fugiat molestias dolor mollitia obcaecati pariatur nobis! Rerum, a, veritatis.'
-        },
-        {
-          name: 'Leo Luong',
-          body:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odit reiciendis hic deserunt vero eveniet necessitatibus laudantium nisi, vitae consectetur, fugiat molestias dolor mollitia obcaecati pariatur nobis! Rerum, a, veritatis.'
-        },
-        {
-          name: 'Andrew Delcarmen',
-          body:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint odit reiciendis hic deserunt vero eveniet necessitatibus laudantium nisi, vitae consectetur, fugiat molestias dolor mollitia obcaecati pariatur nobis! Rerum, a, veritatis.'
-        }
-      ]
+      testimonials: []
     }
   },
   computed: {
@@ -490,6 +481,11 @@ export default {
   padding: 8rem 1.5rem;
   background: $primaryColor;
   margin: 0;
+  &--triangles {
+    @media (min-width: $desktop) {
+      padding-bottom: 15rem;
+    }
+  }
   &__columns {
     display: block;
     @media (min-width: $widescreen) {
