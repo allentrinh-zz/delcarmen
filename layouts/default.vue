@@ -35,9 +35,21 @@ export default {
   methods: {
     toggleNavigation() {
       this.navigationOpen = !this.navigationOpen
+      if (this.navigationOpen) {
+        this.setNavigationFocus()
+        document.addEventListener('keyup', (event) => {
+          if (event.key === 'Escape') {
+            this.forceCloseNavigation()
+          }
+        })
+      }
     },
     forceCloseNavigation() {
       this.navigationOpen = false
+    },
+    setNavigationFocus() {
+      const navigation = this.$children[3]
+      navigation.$el.childNodes[0].focus()
     }
   }
 }

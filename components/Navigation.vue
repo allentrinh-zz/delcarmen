@@ -1,5 +1,9 @@
 <template>
   <nav class="navigation" :class="{ 'navigation--open': navigationOpen }">
+    <button
+      aria-hidden="true"
+      class="navigation__link navigation__link--hidden"
+    ></button>
     <ul class="navigation__list">
       <li
         v-for="(item, index) in $store.state.navigation"
@@ -94,12 +98,21 @@ export default {
       opacity: 0;
       @include transition;
     }
-    &:hover {
+    &:hover,
+    &:focus {
       color: $primaryColor;
+      outline: 0;
       &::before {
         opacity: 1;
         transform: skew(-15deg) translate(-50%, -50%);
       }
+    }
+    &--hidden {
+      opacity: 0;
+      border: 0;
+      height: 0;
+      width: 0;
+      padding: 0;
     }
   }
   &__link-text {

@@ -6,7 +6,7 @@
         <div class="container">
           <h2 class="how__heading">How it works</h2>
           <p class="how__body">
-            Let over 10 years of experience guide you through the process.
+            {{ tagline }}
           </p>
           <div class="columns">
             <div class="column">
@@ -191,6 +191,7 @@ export default {
   },
   data() {
     return {
+      tagline: 'Let over 10 years of experience guide you through the process.',
       steps: [
         {
           heading: 'Establish your goals',
