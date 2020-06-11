@@ -128,10 +128,7 @@
           </router-link>
         </div>
       </section>
-      <section
-        class="section content blocks has-text-centered"
-        :class="{ 'blocks--triangles': !testimonials.length }"
-      >
+      <section class="section content blocks has-text-centered">
         <div class="container">
           <h2 class="blocks__heading--main">Available services</h2>
           <div class="columns blocks__columns">
@@ -153,7 +150,6 @@
             </span>
           </router-link>
         </div>
-        <Triangles v-if="!testimonials.length" modifier="off-white" />
       </section>
     </main>
   </div>
@@ -161,12 +157,10 @@
 
 <script>
 import Hero from '~/components/Hero.vue'
-import Triangles from '~/components/Triangles.vue'
 
 export default {
   components: {
-    Hero,
-    Triangles
+    Hero
   },
   data() {
     return {
@@ -557,20 +551,6 @@ export default {
     @media (min-width: $desktop) {
       font-size: 2.5rem;
     }
-  }
-}
-
-.testimonial {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 2rem 1.5rem;
-  border-radius: 2px;
-  @include box-shadow;
-  &__name {
-    font-weight: bold;
-    font-family: $heading;
-    font-size: 1.25rem;
-  }
-  &__body {
   }
 }
 </style>
