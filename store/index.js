@@ -22,13 +22,13 @@ export const state = () => ({
       text: 'Programs',
       to: '/programs'
     },
-    // {
-    //   text: 'Personal Training',
-    //   to: '/personal-training'
-    // },
     {
       text: 'Blog',
       to: '/blog'
+    },
+    {
+      text: 'Testimonials',
+      to: '/testimonials'
     },
     {
       text: 'Contact',

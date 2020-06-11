@@ -155,34 +155,6 @@
         </div>
         <Triangles v-if="!testimonials.length" modifier="off-white" />
       </section>
-      <section
-        v-if="testimonials.length"
-        class="hero is-fullheight hero--has-image testimonials"
-      >
-        <img
-          :src="require(`~/assets/images/IMG_2373.jpeg`)"
-          alt="Delcarmen coaching male client with log press"
-          class="hero__image"
-        />
-        <div class="hero-body has-text-centered content">
-          <div class="container">
-            <h2 class="title hero__title">Testimonials</h2>
-            <div class="columns">
-              <div
-                v-for="(testimonial, key) in testimonials"
-                :key="key"
-                class="column"
-              >
-                <div class="testimonial">
-                  <p class="testimonial__name">{{ testimonial.name }}</p>
-                  <p class="testimonial__body">{{ testimonial.body }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Triangles modifier="off-white" />
-      </section>
     </main>
   </div>
 </template>
@@ -235,8 +207,7 @@ export default {
           body:
             'Let me take the guess work out of food! Get custom nutritional programming to help you lose fat and keep it off!'
         }
-      ],
-      testimonials: []
+      ]
     }
   },
   computed: {

@@ -14,6 +14,7 @@
   "dependencies": {
     "@mdi/font": "^5.0.45",
     "@nuxtjs/bulma": "^1.2.1",
+    "imagemin": "^7.0.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
